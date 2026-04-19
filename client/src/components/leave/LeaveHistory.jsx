@@ -54,7 +54,7 @@ const LeaveHistory = ({ leaves, isAdmin, onUpdate }) => {
 
                                         </td>
 
-                                        <td className='max-w-xs truncate text-slate-500' title=''>
+                                        <td className='max-w-xs truncate text-slate-500' title={leave.reason}>
                                             {leave.reason}
 
                                         </td>
