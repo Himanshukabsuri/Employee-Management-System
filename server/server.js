@@ -6,6 +6,7 @@ import connectDB from './config/database.js'
 import authRouter from './routes/authRoutes.js'
 import employeeRouter from './routes/employeeRoutes.js'
 import profileROuter from './routes/profileRoutes.js'
+import attendanceRouter from './routes/attendanceRoute.js'
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -18,6 +19,7 @@ connectDB()
 app.use('/api/auth',authRouter)
 app.use("/api/employees",employeeRouter)
 app.use("/api/profile",profileROuter)
+app.use("/api/attendance",attendanceRouter)
 
 
 
