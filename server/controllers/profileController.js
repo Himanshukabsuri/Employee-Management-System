@@ -3,7 +3,7 @@
 
 import Employee from "../models/Employee.js";
 
-export const getProfile = (req,res)=>{
+export const getProfile = async (req,res)=>{
     try {
         const session = req.session;
         const employee = await Employee.findOne({userId:session.userId})
@@ -24,7 +24,7 @@ export const getProfile = (req,res)=>{
 
 // update profile
 
-export const updateProfile = (req,res)=>{
+export const updateProfile =async (req,res)=>{
     try {
         const session = req.session;
         const employee = await Employee.findOne({userId:session.userId})
