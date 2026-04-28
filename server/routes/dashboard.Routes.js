@@ -1,6 +1,6 @@
 import {Router} from 'express'
-import { protect } from '../middleware/auth'
-import { getDashboard } from '../controllers/dashboardController'
+import { protect } from '../middleware/auth.js'
+import { getDashboard } from '../controllers/dashboardController.js'
 
 const dashboardRouter = Router()
 

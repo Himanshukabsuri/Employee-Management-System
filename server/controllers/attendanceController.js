@@ -2,6 +2,7 @@
 
 // in/out for employee
 
+import { inngest } from "../inngest/index.js";
 import Attendance from "../models/Attendance.js";
 import Employee from "../models/Employee.js";
 
@@ -37,6 +38,15 @@ export const clockInOut = async(req,res)=>{
                 date:today,
                 checkIn:now,
                 status:isLate ? "LATE":"PRESENT"
+            })
+
+            await inngest.send({
+                name:"employee/check-out",
+                data:{
+                    employeeId:employee._id,
+                    attendeanceId:attendeance._id,
+                    
+                }
             })
 
             return res.json({success:true,type:"CHECK_IN",date:attendeance});
