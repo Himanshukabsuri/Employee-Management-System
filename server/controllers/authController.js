@@ -8,7 +8,7 @@ import User from "../models/User.js";
 
 export const login = async (req, res) => {
     try {
-        const { email, password, role } = req.body;
+        const { email, password, role_type } = req.body;
 
         if (!email || !password) {
             return res.status(400).json({ error: "Email and password are required" })
